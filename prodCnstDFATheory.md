@@ -1,4 +1,3 @@
-# ========================================
 A Treatise on the Product Construction
 
 :Author: nonQualities
@@ -35,24 +34,22 @@ invent new states out of fancy. Instead, we form a state space from the
 states $Q_1$ and $M_2$ possesses states $Q_2$, our grand machine boasts the
 set of paired states:
 
-.. math::
 
-Q = Q_1 \times Q_2 = { (q_1, q_2) \mid q_1 \in Q_1 \text{ and } q_2 \in Q_2 }
+$Q = Q_1 \times Q_2 = { (q_1, q_2) \mid q_1 \in Q_1 \text{ and } q_2 \in Q_2 }$
 
 Every state in this new machine is an ordered pair, acting as a coordinate
 upon a grid, tracking our position in both component machines at the same instant.
 
 ---
 
-# The Geometry of Transitions
+The Geometry of Transitions
 
 When a symbol $\sigma$ from the alphabet arrives, both components of our paired
 state must update according to their own rules. The transition function
 $\delta$ for the product machine is defined with absolute symmetry:
 
-.. math::
 
-\delta((q_1, q_2), \sigma) = (\delta_1(q_1, \sigma), \delta_2(q_2, \sigma))
+$$\delta((q_1, q_2), \sigma) = (\delta_1(q_1, \sigma), \delta_2(q_2, \sigma))$$
 
 Let us visualize this state space as a physical grid. In the diagram below,
 the horizontal movement tracks the states of $M_1$, while the vertical
@@ -61,13 +58,14 @@ movement tracks the states of $M_2$.
 
 ---
 
-# The Rule of Acceptance
+The Rule of Acceptance
 
 The ultimate purpose of our machine depends entirely upon how we select our
 **Final (Accepting) States**, denoted by $F$. By altering this selection, we
 may compute either the logical *Intersection* (both conditions must hold) or
 the logical *Union* (at least one condition must hold) of our languages.
 
+```
 
 +------------------+-----------------------------------+------------------------------------------+
 | Operation Type   | Mathematical Set Notation         | Veracity Condition                       |
@@ -79,15 +77,16 @@ the logical *Union* (at least one condition must hold) of our languages.
 | ($L_1 \cup L_2$) |      $(Q_1 \times F_2)$           | $q_1 \in F_1$ **OR** $q_2 \in F_2$.      |
 +------------------+-----------------------------------+------------------------------------------+
 
----
 
-# The Execution Scheme
+```
+
+The Execution Scheme
 
 To render this elegant theory into a practical recipe for a computing engine,
 we outline the simulation algorithm below. It accepts an input stream and walks
 the grid of the product state space with unwavering precision.
 
-.. code-block:: text
+```
 
 Algorithm: Product_Automaton_Simulation
 Input:     A string of symbols W = c_1, c_2, ... c_n
@@ -97,7 +96,6 @@ Begin
 Let current_q1 be the start state of Machine 1
 Let current_q2 be the start state of Machine 2
 
-```
    For each character c in W do:
        If c is not in the recognized Alphabet then
            Return False (The engine halts at anomalous input)
@@ -117,6 +115,7 @@ Let current_q2 be the start state of Machine 2
 
 ```
 
-End
 
 Thus, with a single pass through the input text, the machine solves a compound
+
+EOF ---
