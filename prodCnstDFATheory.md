@@ -62,9 +62,18 @@ The ultimate purpose of our machine depends entirely upon how we select our
 may compute either the logical *Intersection* (both conditions must hold) or
 the logical *Union* (at least one condition must hold) of our languages.
 
-Operation Type,Mathematical Set Notation,Veracity Condition
-Intersection(L1​∩L2​),F=F1​×F2​,"A state (q1​,q2​) accepts only ifq1​∈F1​ AND q2​∈F2​."
-Union(L1​∪L2​),F=(F1​×Q2​)∪(Q1​×F2​),"A state (q1​,q2​) accepts ifq1​∈F1​ OR q2​∈F2​."
+| Operation Type | Mathematical Set Notation | Veracity Condition |
+| --- | --- | --- |
+| **Intersection**<br>
+
+<br>($L_1 \cap L_2$) | $F = F_1 \times F_2$ | A state $(q_1, q_2)$ accepts only if<br>
+
+<br>$q_1 \in F_1$ **AND** $q_2 \in F_2$. |
+| **Union**<br>
+
+<br>($L_1 \cup L_2$) | $F = (F_1 \times Q_2) \cup (Q_1 \times F_2)$ | A state $(q_1, q_2)$ accepts if<br>
+
+<br>$q_1 \in F_1$ **OR** $q_2 \in F_2$. |
 
 The Execution Scheme
 
