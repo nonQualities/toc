@@ -1,8 +1,5 @@
-A Treatise on the Product Construction
+# A Treatise on the Product Construction
 
-:Author: nonQualities
-:Date: June 18, 2026
-:Purpose: On the Elegant Composition of Finite State Automata
 
 It is an established truth in the philosophy of computation that complex
 languages, much like intricate clockwork mechanisms, are best understood by
@@ -17,9 +14,9 @@ whole. By this method, we cause two distinct machines to march in perfect
 simultaneous step, tracking multiple properties without the one ever
 confounding the other.
 
----
 
-# The Core Philosophy
+
+The Core Philosophy
 
 Let us suppose we possess two distinct automata, which we shall call
 $M_1$ and $M_2$. Each processes the very same alphabet $\Sigma$.
@@ -65,20 +62,9 @@ The ultimate purpose of our machine depends entirely upon how we select our
 may compute either the logical *Intersection* (both conditions must hold) or
 the logical *Union* (at least one condition must hold) of our languages.
 
-```
-
-+------------------+-----------------------------------+------------------------------------------+
-| Operation Type   | Mathematical Set Notation         | Veracity Condition                       |
-+==================+===================================+==========================================+
-| **Intersection** | $F = F_1 \times F_2$              | A state $(q_1, q_2)$ accepts only if     |
-| ($L_1 \cap L_2$) |                                   | $q_1 \in F_1$ **AND** $q_2 \in F_2$.     |
-+------------------+-----------------------------------+------------------------------------------+
-| **Union**        | $F = (F_1 \times Q_2) \cup$       | A state $(q_1, q_2)$ accepts if          |
-| ($L_1 \cup L_2$) |      $(Q_1 \times F_2)$           | $q_1 \in F_1$ **OR** $q_2 \in F_2$.      |
-+------------------+-----------------------------------+------------------------------------------+
-
-
-```
+Operation Type,Mathematical Set Notation,Veracity Condition
+Intersection(L1​∩L2​),F=F1​×F2​,"A state (q1​,q2​) accepts only ifq1​∈F1​ AND q2​∈F2​."
+Union(L1​∪L2​),F=(F1​×Q2​)∪(Q1​×F2​),"A state (q1​,q2​) accepts ifq1​∈F1​ OR q2​∈F2​."
 
 The Execution Scheme
 
