@@ -53,27 +53,21 @@ the horizontal movement tracks the states of $M_1$, while the vertical
 movement tracks the states of $M_2$.
 
 
----
-
 The Rule of Acceptance
 
-The ultimate purpose of our machine depends entirely upon how we select our
-**Final (Accepting) States**, denoted by $F$. By altering this selection, we
-may compute either the logical *Intersection* (both conditions must hold) or
-the logical *Union* (at least one condition must hold) of our languages.
+The ultimate purpose of our machine depends entirely upon how we select our Final (Accepting) States, denoted by F. By altering this selection, we may compute either the logical Intersection (both conditions must hold) or the logical Union (at least one condition must hold) of our constituent languages.
 
-| Operation Type | Mathematical Set Notation | Veracity Condition |
-| --- | --- | --- |
-| **Intersection**<br>
+    Intersection (L1​∩L2​):
 
-<br>($L_1 \cap L_2$) | $F = F_1 \times F_2$ | A state $(q_1, q_2)$ accepts only if<br>
+        Mathematical Set Notation: F=F1​×F2​
 
-<br>$q_1 \in F_1$ **AND** $q_2 \in F_2$. |
-| **Union**<br>
+        Veracity Condition: A composite state (q1​,q2​) is accepting if and only if q1​∈F1​ AND q2​∈F2​. The machine only honors strings that satisfy both properties simultaneously.
 
-<br>($L_1 \cup L_2$) | $F = (F_1 \times Q_2) \cup (Q_1 \times F_2)$ | A state $(q_1, q_2)$ accepts if<br>
+    Union (L1​∪L2​):
 
-<br>$q_1 \in F_1$ **OR** $q_2 \in F_2$. |
+        Mathematical Set Notation: F=(F1​×Q2​)∪(Q1​×F2​)
+
+        Veracity Condition: A composite state (q1​,q2​) is accepting if q1​∈F1​ OR q2​∈F2​. The machine honors strings that satisfy at least one of the component properties.
 
 The Execution Scheme
 
