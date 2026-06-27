@@ -12,7 +12,6 @@ static int map_alphabet(char c) {
     return -1;
 }
 
-
 // State = (modulo_5 * 2) + parity (where Even = 0, Odd = 1)
 typedef enum {
     S0_E = 0,   S0_O = 1,
@@ -21,7 +20,6 @@ typedef enum {
     S3_E = 6,   S3_O = 7,
     S4_E = 8,   S4_O = 9
 } State;
-
 
 static const State transition_table[NUM_STATES][ALPHABET_SIZE] = {
 //  Current State      | Input '0'      | Input '1'
